@@ -1,0 +1,26 @@
+{
+  "name": "storynebula",
+  "version": "1.0.0",
+  "description": "AI-powered auto-expanding fiction website powered by Groq",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "generate": "node scripts/generate.js",
+    "generate:horror": "node scripts/generate.js Horror",
+    "generate:scifi": "node scripts/generate.js Sci-Fi",
+    "generate:fantasy": "node scripts/generate.js Fantasy",
+    "generate:mystery": "node scripts/generate.js Mystery",
+    "generate:romance": "node scripts/generate.js Romance",
+    "generate:comedy": "node scripts/generate.js Comedy"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["fiction", "ai", "stories", "groq", "generator"],
+  "license": "MIT"
+}

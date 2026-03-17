@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universe Map — StoryNebula</title>
+  <meta name="description" content="Explore the StoryNebula Universe Map — see story counts by genre across our ever-expanding AI fiction library." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>" />
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">🌌 StoryNebula</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/?genre=Horror">Horror</a>
+      <a href="/?genre=Sci-Fi">Sci-Fi</a>
+      <a href="/?genre=Fantasy">Fantasy</a>
+      <a href="/?genre=Mystery">Mystery</a>
+      <a href="/?genre=Romance">Romance</a>
+      <a href="/?genre=Comedy">Comedy</a>
+      <a href="/universe.html" class="active">Universe Map</a>
+    </nav>
+    <div class="header-actions">
+      <button class="toggle-btn" id="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle theme"></button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────── -->
+<main>
+
+  <div class="page-hero">
+    <h1>Universe Map</h1>
+    <p>The ever-expanding StoryNebula constellation — charted by genre, counted in stories.</p>
+  </div>
+
+  <!-- Total Counter -->
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="universe-total" id="total-count">—</div>
+    <div class="universe-total-label">Stories in the Nebula</div>
+  </div>
+
+  <!-- Genre Cards -->
+  <div id="universe-grid" class="universe-grid">
+    <div class="loading-state"><div class="spinner"></div><p>Loading universe data...</p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Generate CTA -->
+  <div class="generate-banner">
+    <h3>Expand the Universe</h3>
+    <p>Every generated story adds a new star to the constellation.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" id="gen-btn">⚡ Generate New Story</button>
+      <a href="/" class="btn btn-outline">← Back to Homepage</a>
+    </div>
+    <div class="generate-status" id="gen-status"></div>
+  </div>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">🌌 StoryNebula</a>
+      <p class="footer-tagline">AI-Generated Fiction — Auto-expanding universe</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Homepage</a>
+      <a href="/universe.html">Universe Map</a>
+    </div>
+    <div class="footer-disclaimer">
+      <p>StoryNebula — AI-Generated Fiction</p>
+      <p style="margin-top:0.5rem;">All stories are fictional.</p>
+      <p style="margin-top:0.25rem;">Characters, places, and events are invented.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © <span id="year"></span> StoryNebula · Powered by Groq · All stories are AI-generated fiction
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="universe.js"></script>
+</body>
+</html>

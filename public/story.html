@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story — StoryNebula</title>
+  <meta name="description" content="Read this AI-generated story on StoryNebula." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>" />
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">🌌 StoryNebula</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/?genre=Horror">Horror</a>
+      <a href="/?genre=Sci-Fi">Sci-Fi</a>
+      <a href="/?genre=Fantasy">Fantasy</a>
+      <a href="/?genre=Mystery">Mystery</a>
+      <a href="/?genre=Romance">Romance</a>
+      <a href="/?genre=Comedy">Comedy</a>
+      <a href="/universe.html">Universe Map</a>
+    </nav>
+    <div class="header-actions">
+      <button class="toggle-btn" id="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle theme"></button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────── -->
+<main>
+  <div id="story-container">
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading story...</p>
+    </div>
+  </div>
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">🌌 StoryNebula</a>
+      <p class="footer-tagline">AI-Generated Fiction — Auto-expanding universe</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Homepage</a>
+      <a href="/universe.html">Universe Map</a>
+    </div>
+    <div class="footer-disclaimer">
+      <p>StoryNebula — AI-Generated Fiction</p>
+      <p style="margin-top:0.5rem;">All stories are fictional.</p>
+      <p style="margin-top:0.25rem;">Characters, places, and events are invented.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © <span id="year"></span> StoryNebula · Powered by Groq · All stories are AI-generated fiction
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="story.js"></script>
+</body>
+</html>

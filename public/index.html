@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StoryNebula — AI-Generated Fiction</title>
+  <meta name="description" content="Explore an ever-expanding universe of AI-generated short stories across Horror, Sci-Fi, Fantasy, Mystery, Romance, and Comedy." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>" />
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">🌌 StoryNebula</a>
+    <nav id="main-nav">
+      <a href="/" class="active">Home</a>
+      <a href="/?genre=Horror">Horror</a>
+      <a href="/?genre=Sci-Fi">Sci-Fi</a>
+      <a href="/?genre=Fantasy">Fantasy</a>
+      <a href="/?genre=Mystery">Mystery</a>
+      <a href="/?genre=Romance">Romance</a>
+      <a href="/?genre=Comedy">Comedy</a>
+      <a href="/universe.html">Universe Map</a>
+    </nav>
+    <div class="header-actions">
+      <button class="toggle-btn" id="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle theme"></button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────── -->
+<main>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <h1>A Universe of Stories</h1>
+    <p>Infinite AI-generated fiction across six genres — new stories appearing every day.</p>
+  </div>
+
+  <!-- Story of the Day -->
+  <section id="sotd-section">
+    <div class="section-label">✦ Featured</div>
+    <div id="sotd-container">
+      <div class="loading-state"><div class="spinner"></div><p>Loading story of the day...</p></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Action Bar -->
+  <div class="action-bar">
+    <span class="action-bar-label">Explore:</span>
+    <button class="btn btn-primary" id="random-btn">🎲 Random Story</button>
+    <button class="btn btn-outline" id="surprise-btn">✨ Surprise Me</button>
+    <button class="btn btn-ghost" id="refresh-seeds-btn">🌱 New Story Seeds</button>
+    <button class="btn btn-ghost" id="generate-btn">⚡ Generate New Story</button>
+    <span class="generate-status" id="gen-status"></span>
+  </div>
+
+  <!-- Story Seeds -->
+  <section class="seeds-section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Spark your imagination</div>
+        <h2 class="section-title">Story Seeds</h2>
+      </div>
+    </div>
+    <div class="seeds-grid" id="seeds-grid">
+      <div class="loading-state"><div class="spinner"></div></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Latest Stories -->
+  <section>
+    <div class="section-header">
+      <div>
+        <div class="section-label">The archive</div>
+        <h2 class="section-title" id="stories-heading">Latest Stories</h2>
+      </div>
+      <div id="story-count" style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-dim);"></div>
+    </div>
+
+    <!-- Genre Filters -->
+    <div class="genre-filters" id="genre-filters">
+      <button class="genre-pill active" data-genre="">All</button>
+      <button class="genre-pill" data-genre="Horror">Horror</button>
+      <button class="genre-pill" data-genre="Sci-Fi">Sci-Fi</button>
+      <button class="genre-pill" data-genre="Fantasy">Fantasy</button>
+      <button class="genre-pill" data-genre="Mystery">Mystery</button>
+      <button class="genre-pill" data-genre="Romance">Romance</button>
+      <button class="genre-pill" data-genre="Comedy">Comedy</button>
+    </div>
+
+    <!-- Stories Grid -->
+    <div class="stories-grid" id="stories-grid">
+      <div class="loading-state"><div class="spinner"></div><p>Loading stories...</p></div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <!-- Generate CTA -->
+  <div class="generate-banner">
+    <h3>Expand the Nebula</h3>
+    <p>The universe grows with every story. Generate a new one and add to the constellation.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" id="gen-banner-btn">⚡ Generate a Story</button>
+      <a href="/universe.html" class="btn btn-outline">🗺️ View Universe Map</a>
+    </div>
+    <div class="generate-status" id="banner-gen-status"></div>
+  </div>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">🌌 StoryNebula</a>
+      <p class="footer-tagline">AI-Generated Fiction — Auto-expanding universe</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Homepage</a>
+      <a href="/universe.html">Universe Map</a>
+      <a href="/?genre=Horror">Horror</a>
+      <a href="/?genre=Sci-Fi">Sci-Fi</a>
+      <a href="/?genre=Fantasy">Fantasy</a>
+      <a href="/?genre=Mystery">Mystery</a>
+      <a href="/?genre=Romance">Romance</a>
+      <a href="/?genre=Comedy">Comedy</a>
+    </div>
+    <div class="footer-disclaimer">
+      <p>StoryNebula — AI-Generated Fiction</p>
+      <p style="margin-top:0.5rem;">All stories are fictional.</p>
+      <p style="margin-top:0.25rem;">Characters, places, and events are invented.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © <span id="year"></span> StoryNebula · Powered by Groq · All stories are AI-generated fiction
+  </div>
+</footer>
+
+<!-- ── Toast ───────────────────────────────────────────────── -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
